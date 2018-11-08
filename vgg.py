@@ -88,6 +88,8 @@ class VGG(torch.nn.Module):
             torch.nn.ReLU(inplace=True))
         self.maxpool_5 = torch.nn.MaxPool2d(kernel_size=2, stride=2)
 
+        self.a =1
+
     def forward(self, x):
         """
         In the forward function we accept a Tensor of input data and we must return
@@ -132,11 +134,13 @@ class VGG(torch.nn.Module):
 
 
 
+if __name__ == '__main__':
 
-# Create random Tensors to hold inputs and outputs
-x = torch.randn(1, 3, 600, 1024)
-model = VGG()
-y_pred = model(x)
-print(y_pred)
+    # Create random Tensors to hold inputs and outputs
+    x = torch.randn(1, 3, 600, 1024)
+    model = VGG()
+    print(model.a)
+    y_pred = model(x)
+    print(y_pred)
 
 
